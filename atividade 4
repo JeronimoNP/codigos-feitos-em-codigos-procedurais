@@ -1,0 +1,53 @@
+/*
+Ler três valores inteiros representados pelas variáveis A, B e C e apresentar os valores lidos
+dispostos em ordem crescente. Dica: utilizar tomada de decisão sequencial e as ideias trabalhadas
+nos exercícios "g" (propriedade distributiva) e "f' (troca de valores) do capítulo 3.
+*/
+#include <stdio.h>
+//variaveis
+int n[2];
+//comando secundario
+void calculo(void){
+    if (n[0] > n[1])
+    {
+        if (n[0] > n[2])
+        {
+            if (n[1] > n[2])
+            {
+                printf("a sequencia e: %i, %i, %i", n[2],n[1],n[0]);    //a+b+c
+            }else{
+                printf("a sequencia e: %i, %i, %i", n[1],n[2],n[0]);    //a+c+b
+            }
+        }else{
+            if (n[0] > n[1])
+            {
+                printf("a sequencia e: %i, %i, %i", n[1],n[0],n[2]);    //c+a+b
+            }
+        }
+    }else{
+        if (n[1] > n[2])
+        {
+            if (n[0] > n[2])
+            {
+                printf("a sequencia e: %i, %i, %i", n[2],n[0],n[1]);    //b+a+c
+            }else{
+                printf("a sequencia e: %i, %i, %i", n[0],n[2],n[1]);    //b+c+a
+            }
+            
+        }else{
+            printf("a sequencia e: %i, %i, %i", n[0],n[1],n[2]);    //c+b+a
+        }   
+    }
+}        
+//comando principal
+int main()
+{
+    printf("Digite 1 numero: ");
+    scanf("%i", &n[0]);
+    printf("Digite 2 numero: ");
+    scanf("%i", &n[1]);
+    printf("Digite 3 numero: ");
+    scanf("%i", &n[2]);
+    calculo();
+    printf("\nFIM");
+}
